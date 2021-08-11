@@ -1,0 +1,43 @@
+jobs:
+  check-broken-link:
+    - name: HashiCorp's Link Checker
+      uses: hashicorp/gh-action-check-broken-links@v1
+    - name: HashiCorp's Link Checker
+      uses: hashicorp/gh-action-check-broken-links@v1
+      with:
+        baseUrl: 'https://hashicorp.com'
+        files: 'pages/foo.mdx pages/bar.mdx'
+        whitelist: |
+          https://google.com/whitelist
+          https://yahoo.com/whitelist
+    - name: "C/I"
+
+      on:
+        pull_request:
+      push:
+        branches:
+          - master
+          - "releases/*"
+
+    full-check:
+      ci:
+        name: Build / Test / Run
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v2
+
+          - run: npm ci
+
+          - name: Build / Test
+            run: npm run all
+
+          - name: Run
+            id: action
+            continue-on-error: true
+            uses: ./
+            with:
+              baseUrl: "https://hashicorp.com"
+              files: "pages/test.mdx"
+
+          - run: |
+              echo ${{ toJson(steps.action.outputs.annotations) }}      
