@@ -1,0 +1,36 @@
+- name: Metrics embed
+  uses: lowlighter/metrics@latest
+  with:
+    # ... other options
+    plugin_introduction: yes
+    plugin_introduction_title: no # Hide section title
+    plugin_stars: yes
+    plugin_stars_limit: 4 # Limit to 4 entries
+    plugin_followup: yes
+    plugin_followup_sections: repositories, user #
+    plugin_projects: yes
+    plugin_projects_repositories: lowlighter/metrics/projects/1 # Display #1 project of lowlighter/metrics repository
+    plugin_projects_limit: 4                                    # Limit to 4 entries
+    plugin_projects_descriptions: yes                           # Display projects descriptions
+    plugin_activity: yes
+    plugin_activity_limit: 5    # Limit to 5 events
+    plugin_activity_days: 14    # Keep only events from last 14 days (can be set to 0 to disable limitations)
+    plugin_activity_filter: all # Show all events (use table above to filter events types)
+    template: classic
+    user: repository-owner # Optional if you're the owner of target repository and you're using your own personal token
+    repo: repository-name  # Repository name
+ 
+- name: GH Release
+  uses: softprops/action-gh-release@v0.1.12
+
+  on: push
+
+  jobs:
+    build:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v2
+        - name: Release
+          uses: softprops/action-gh-release@v1
+          if: startsWith(github.ref, 'refs/tags/')
