@@ -1,0 +1,5 @@
+- name: Setup Jira
+  uses: atlassian/gajira-cli@v2.0.2
+- name: Make comment on Jira issue
+  run: jira --issue=GA-1 --comment=\"Actions in action\""
+  
