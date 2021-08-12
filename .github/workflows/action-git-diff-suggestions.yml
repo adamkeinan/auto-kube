@@ -1,3 +1,14 @@
+name: "action-git-diff-suggestions"
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches: [ main ]
+  schedule:
+    - cron: '17 21 * * 1'
+
 jobs:
   action:
   - name: action-git-diff-suggestions
@@ -17,7 +28,7 @@ jobs:
     
           - uses: actions/setup-node@v1
             with:
-              node-version: 12
+              node-version: 10
     
           - run: yarn install
     
