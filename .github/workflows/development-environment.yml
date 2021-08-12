@@ -3,6 +3,7 @@ on:
   pull_request:
     paths:
     - 'Makefile'
+    - '/terraform/*.tf'
     - '.github/workflows/development-environment.yml'
     - '.envrc'
     - 'Brewfile'
