@@ -1,13 +1,24 @@
 name: "Merge pull requests"
 
 on:
-  push:
-    branches: [ main ]
   pull_request:
-    # The branches below must be a subset of the branches above
-    branches: [ main ]
-  schedule:
-    - cron: '17 21 * * 1'
+    types:
+      - labeled
+      - unlabeled
+      - synchronize
+      - opened
+      - edited
+      - ready_for_review
+      - reopened
+      - unlocked
+  pull_request_review:
+    types:
+      - submitted
+  check_suite:
+    types:
+      - completed
+  status: {}
+
 jobs:
   auto-merge-pr-pre:
     name: Merge
@@ -15,31 +26,11 @@ jobs:
     steps:
       - name: Merge pull requests (automerge-action)
         uses: pascalgn/automerge-action@v0.14.2
-  
-    on:
-      pull_request:
-        types:
-          - labeled
-          - unlabeled
-          - synchronize
-          - opened
-          - edited
-          - ready_for_review
-          - reopened
-          - unlocked
-      pull_request_review:
-        types:
-          - submitted
-      check_suite:
-        types:
-          - completed
-      status: {}
-  
+    
   automerge-pr-release:
     runs-on: ubuntu-latest
     steps:
       - name: automerge
         uses: "pascalgn/automerge-action@v0.14.2"
         env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"    
