@@ -9,7 +9,7 @@ on:
   push:
     branches: [ main ]
   pull_request:
-    branches: [ main ]
+    branches: [ terraform ]
   schedule:
     - cron: '24 22 * * 1'
 
