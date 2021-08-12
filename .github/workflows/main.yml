@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v2
         name: Checkout repo
         with:
-          fetch-depth: 0
+          fetch-depth: -2
           ref: ${{ github.head_ref }}
       - name: Run yor action and commit
         uses: bridgecrewio/yor-action@main
@@ -30,9 +30,9 @@ jobs:
       - name: Yor GitHub Action
         uses: bridgecrewio/yor-action@0.3.0
         # uses: bridgecrewio/yor-action@04bf3da0c4e8619a307c023ce8f0d196a2d8a4ee
-        # with:
+        with:
           # directory with infrastructure code to scan
-          # directory: # optional, default is .
+          directory: .
           # Run scan on all checks but a specific check identifier (comma separated)
           # tag_groups: # optional
           # comma delimited list of yor tags to apply
@@ -44,11 +44,11 @@ jobs:
           # comma delimited list of paths to external (custom) tags & tag groups plugins
           # custom_tags: # optional
           # The format of the output. cli, json
-          # output_format: # optional
+          output_format: json
           # log level
           # log_level: # optional
           # Choose whether the action will commit changes. Changes will be commited if this is exactly "YES"
-          # commit_changes: # optional, default is true
+          commit_changes: true
   job-02:
     runs-on: ubuntu-latest
     steps:
