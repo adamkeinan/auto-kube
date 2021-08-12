@@ -1,5 +1,14 @@
-- name: Skip Duplicate Actions
-  uses: fkirc/skip-duplicate-actions@v3.4.1
+name: "Skip Duplicate Actions"
+uses: fkirc/skip-duplicate-actions@v3.4.1
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches: [ main ]
+  schedule:
+    - cron: '17 21 * * 1'
   
 jobs:
   pre_job:
@@ -24,4 +33,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Running slow tests..." && sleep 30
+      
+  final_job: 
+    needs: main_job
+    if: ${{ needs.main_job.outputs.should_skip != 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Skip Duplicate Actions
+        uses: fkirc/skip-duplicate-actions@v3.4.1
+      - run: echo "Running slow tests..." && sleep 40 
+   
+  
   
