@@ -15,5 +15,5 @@ jobs:
       with:
         artifacts: "release.tar.gz,test/*.txt"
         bodyFile: "body.md"
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.RA_GITHUB_SECRET }}
 
