@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Yor GitHub Action
-        uses: bridgecrewio/yor-action@0.3.0
+        uses: bridgecrewio/yor-action@v0.56.0
         # uses: bridgecrewio/yor-action@04bf3da0c4e8619a307c023ce8f0d196a2d8a4ee
         with:
           # directory with infrastructure code to scan
