@@ -68,7 +68,7 @@ jobs:
           key: devenv-${{ matrix.os }}-py${{ steps.info.outputs.python-version }}-pip${{ steps.info.outputs.pip-version }}-${{ hashFiles('**/requirements.txt') }}
 
       - name: Cache (yarn)
-        uses: actions/cache@v1 # We are explicitly using v1 due to perf reasons
+        uses: actions/cache@v2
         with:
           path: ${{ steps.info.outputs.yarn-cache-dir }}
           key: devenv-${{ matrix.os }}-v2-yarn-${{ hashFiles('yarn.lock') }}
