@@ -9,4 +9,3 @@ server.listen().then(() => {
     Listening on port 4000
     Explore at https://studio.apollographql.com/sandbox
   `);
-});
