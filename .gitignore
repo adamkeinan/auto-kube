@@ -4,8 +4,7 @@
 *.tfstate
 *.tfstate.backup
 bin/
-archive
-archive/**/*
+archive/*
 
 .github/workflows/secrets/**
 
@@ -27,7 +26,6 @@ vendor
 .aws/**
 .history
 .vscode
-
 
 tfgitkp.*
 tfgitkp
