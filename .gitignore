@@ -4,6 +4,7 @@
 *.tfstate
 *.tfstate.backup
 bin/
+!/*.tf
 
 .ssh
 .ssh/**
@@ -318,6 +319,5 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
-.terraform/*
-.terraform/providers/*
+.exe
 *.exe
