@@ -4,9 +4,18 @@
 *.tfstate
 *.tfstate.backup
 bin/
-/archive
+archive
 archive/**/*
-archive/**
+
+.github/workflows/secrets/**
+
+# NodeJS
+**/node_modules/**
+node_modules/**/**/*
+node_modules
+
+## Ruby
+vendor
 
 .ssh/**
 .ssh
@@ -24,3 +33,5 @@ tfgitkp.*
 tfgitkp
 
 *.env
+
+/lab/terraform/.terraform/*

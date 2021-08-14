@@ -1,0 +1,8 @@
+// This is an example script - don't forget to change it!
+LogRocket.identify('THE_USER_ID_IN_YOUR_APP', {
+  name: 'Adam Keinan',
+  email: 'adamkeinan@example.com',
+
+  // Add your own custom user variables here, ie:
+  subscriptionType: 'pro'
+});
