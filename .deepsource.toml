@@ -1,0 +1,21 @@
+version = 1
+
+[[analyzers]]
+name = "docker"
+enabled = true
+
+[[analyzers]]
+name = "terraform"
+enabled = true
+
+[[transformers]]
+name = "isort"
+enabled = true
+
+[[transformers]]
+name = "prettier"
+enabled = true
+
+[[transformers]]
+name = "gofmt"
+enabled = true

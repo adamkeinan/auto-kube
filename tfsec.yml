@@ -1,0 +1,9 @@
+----
+exclude:
+  - CUS002
+  - aws-s3-enable-versioning
+
+matchSpec:
+  name: tags
+  action: notContains
+  value: kms:*
