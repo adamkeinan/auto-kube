@@ -19,6 +19,9 @@ archive/**
 .history
 .vscode
 
+.exe
+*.exe
+
 
 tfgitkp.*
 tfgitkp
