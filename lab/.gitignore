@@ -22,6 +22,7 @@ tfgitkp
 
 *.env
 
+!/lab/terraform
 
 # Ignore all JENKINS_HOME except jobs directory, root xml config, and
 # .gitignore file.

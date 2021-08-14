@@ -34,4 +34,5 @@ tfgitkp
 
 *.env
 
-/lab/terraform/.terraform/*
+.exe
+*.exe
