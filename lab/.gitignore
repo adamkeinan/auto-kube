@@ -319,6 +319,4 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
-.terraform/*
-.terraform/providers/*
 *.exe
