@@ -1,0 +1,42 @@
+name: "action-git-diff-suggestions"
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches: [ main ]
+  schedule:
+    - cron: '17 21 * * 1'
+
+jobs:
+  action:
+  - name: action-git-diff-suggestions
+    uses: getsentry/action-git-diff-suggestions@v1
+    with:
+      message: 'eslint made the following change'
+      
+  - name: test
+
+    on: pull_request
+    
+    jobs:
+      test:
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v2
+    
+          - uses: actions/setup-node@v1
+            with:
+              node-version: 10
+    
+          - run: yarn install
+    
+          - run: yarn lint
+    
+          - uses: getsentry/action-git-diff-suggestions@main
+            with:
+              message: eslint
+    
+          - run: yarn test
+    

@@ -1,0 +1,9 @@
+name: "Setup Packer"
+
+on: [push]
+
+jobs:
+  setup-packer:
+    runs-on: "ubuntu-latest"
+    - name: HashiCorp Packer Automation to AWS Provision
+      uses: shreyasingh18/Packer-AWS-Actions@3.0

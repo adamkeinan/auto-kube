@@ -1,0 +1,31 @@
+name: "EKS on Fargate"
+
+on:
+  push:
+    branches: [ development ]
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches: [ development ]
+  schedule:
+    - cron: '17 21 * * 1'
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: EKS on Fargate
+        uses: aws-actions/amazon-eks-fargate@v0.1.1
+
+  create_cluster:
+    runs-on: ubuntu-latest
+    name: Create an EKS on Fargate cluster
+    steps:
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-west-1
+      - name: Provision cluster
+        uses: aws-actions/amazon-eks-fargate@v0.1

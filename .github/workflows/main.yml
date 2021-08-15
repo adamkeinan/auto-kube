@@ -1,0 +1,70 @@
+name: IaC trace
+
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+
+jobs:
+
+  yor-bump-v:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        name: Checkout repo
+        with:
+          fetch-depth: -2
+          ref: ${{ github.head_ref }}
+      - name: Run yor action and commit
+        uses: bridgecrewio/yor-action@main
+ 
+  job-01:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Yor GitHub Action
+        uses: bridgecrewio/yor-action@0.3.0
+        # uses: bridgecrewio/yor-action@04bf3da0c4e8619a307c023ce8f0d196a2d8a4ee
+        with:
+          # directory with infrastructure code to scan
+          directory: .
+          # Run scan on all checks but a specific check identifier (comma separated)
+          # tag_groups: # optional
+          # comma delimited list of yor tags to apply
+          # tag: # optional
+          # comma delimited list of yor tags to not apply
+          # skip_tags: # optional
+          # comma delimited list of paths for yor to skip tagging of
+          # skip_dirs: # optional
+          # comma delimited list of paths to external (custom) tags & tag groups plugins
+          # custom_tags: # optional
+          # The format of the output. cli, json
+          output_format: json
+          # log level
+          # log_level: # optional
+          # Choose whether the action will commit changes. Changes will be commited if this is exactly "YES"
+          commit_changes: true
+  job-02:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Run yor action
+        uses: bridgecrewio/yor-action@main
+        with:
+          directory: lab/terraform
+          skip_directory: test
+          log_level: DEBUG
+          skip_tags: git_modifiers,git_commit,git_repository
+          tag_groups: git
+          custom_tags: path/to/plugin.so
+          output_format: json
+      - name: Commit tag changes
+        uses: stefanzweifel/git-auto-commit-action@v4
