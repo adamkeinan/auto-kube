@@ -1,19 +1,5 @@
-# auto-kube
+# Automate-Kube
 
-rtkit
- dnsmasq-base
- bluez
- pulseaudio-module-bluetooth
- cups-pk-helper
- usbmuxd
- geoclue-2.0
- libgeoclue-2-0:amd64
- gnome-settings-daemon
- pulseaudio
- gir1.2-geoclue-2.0:amd64
- gnome-shell
- ubuntu-session
- gdm3
- libcanberra-pulse:amd64
- gnome-control-center
- network-manager-gnome
+[![DeepSource](https://deepsource.io/gh/adamkeinan/auto-kube.svg/?label=active+issues&show_trend=true)](https://deepsource.io/gh/adamkeinan/auto-kube/?ref=repository-badge) [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/adamkeinan/auto-kube/main.svg)](https://results.pre-commit.ci/latest/github/adamkeinan/auto-kube/main) [![DepShield Badge](https://depshield.sonatype.org/badges/owner/repository/depshield.svg)](https://depshield.github.io) [![DeepSource](https://deepsource.io/gh/adamkeinan/auto-kube.svg/?label=active+issues&show_trend=true&token=rNhEFjE7GSeJ8bp9Vhrd0ja8)](https://deepsource.io/gh/adamkeinan/auto-kube/?ref=repository-badge) [![DeepSource](https://deepsource.io/gh/adamkeinan/auto-kube.svg/?label=resolved+issues&show_trend=true&token=rNhEFjE7GSeJ8bp9Vhrd0ja8)](https://deepsource.io/gh/adamkeinan/auto-kube/?ref=repository-badge)
+
+#### An opinionated multi-purpuse Git repo that sets to exam multiple automation DevOps solotions in order to optimize aproduction-ready stack

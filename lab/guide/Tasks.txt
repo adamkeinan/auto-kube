@@ -8,11 +8,11 @@ Prerequsites:
 
 For Red-Hat Enterprise Linux Host:
 1. Install Ansible on 3 Nodes
-2. Install Openshift 
+2. Install Openshift
 3. Install odo
 
-For Terraform: 
-Deploy a EKS Cluster  
+For Terraform:
+Deploy a EKS Cluster
 
 For Kubernetes Cluster:
 1. Install Kubectle
