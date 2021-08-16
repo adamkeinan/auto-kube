@@ -35,5 +35,4 @@ tfgitkp
 
 .exe
 *.exe
-
-export PATH="$PATH:/mnt/c/Python39/python"
+*.lock
