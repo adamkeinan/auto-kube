@@ -1,0 +1,11 @@
+Unhandled Exception: System.IO.FileNotFoundException: Could not load file or assembly 'GitHub, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies. The system cannot find the file specified.
+   at Microsoft.Git.CredentialManager.Program.Main(String[] args)
+error: unknown option `timeout=3600'
+usage: git credential-cache [options] <action>
+
+    credential-cache is disabled in this build of Git
+
+/usr/bin/env: ‘python3.8’: No such file or directory
+error: failed to push some refs to 'https://github.com/adamkeinan/auto-kube.git'
+
+/usr/bin/env: ‘python3.8’: No such file or directory

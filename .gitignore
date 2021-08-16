@@ -5,6 +5,7 @@
 *.tfstate.backup
 bin/
 archive/*
+terraform.tfvars
 
 .github/workflows/secrets/**
 
@@ -34,3 +35,4 @@ tfgitkp
 
 .exe
 *.exe
+*.lock

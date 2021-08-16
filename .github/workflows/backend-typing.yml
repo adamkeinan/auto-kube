@@ -2,7 +2,7 @@ name: backend typing
 on:
   push:
     branches:
-      - master
+      - origin
   pull_request:
 
 jobs:

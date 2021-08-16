@@ -7,9 +7,9 @@ name: DevSkim
 
 on:
   push:
-    branches: [ main ]
+    branches: [ origin ]
   pull_request:
-    branches: [ terraform ]
+    branches: [ development ]
   schedule:
     - cron: '24 22 * * 1'
 

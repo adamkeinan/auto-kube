@@ -2,7 +2,7 @@ name: backend lint
 on:
   push:
     branches:
-      - master
+      - origin
   pull_request:
 
 jobs:

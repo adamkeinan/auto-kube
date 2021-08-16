@@ -1,0 +1,43 @@
+sudo apt-get autoclean
+sudo apt-get clean
+
+//delete cash  //
+systemd-resolve --statistics
+systemd-resolve --flush-caches
+
+# “cleaning up your ubuntu system” Code Answer’s
+sudo add-apt-repository ppa:utappia/stablesudo apt updatesudo apt install ucaresystem-core
+sudo ucaresystem-core
+
+# “git clean cache” Code Answer’s
+git rm -r --cached <name-of-dir>
+
+# ubuntu git credentials cache
+git config --global credential.helper 'cache --timeout=600'
+
+# ubuntu server disable unattended upgrades
+sudo dpkg-reconfigure -plow unattended-upgrades
+
+# command to upgrade broken/not upgraded packages on Ubuntu
+sudo apt-get --with-new-pkgs upgrade
+
+sudo apt-get update --fix-missing
+sudo dpkg --configure -a
+sudo apt-get install -f
+sudo apt upgrade
+
+# how to remove unnecessary packages in linux
+sudo apt autoremove --purge
+
+# purge python3.y from every place in my path
+# The following commands will remove your make altinstall-ed python:
+
+rm -f /usr/local/bin/python2.7
+rm -f /usr/local/bin/pip2.7
+rm -f /usr/local/bin/pydoc
+rm -rf /usr/local/bin/include/python2.7
+rm -f /usr/local/lib/libpython2.7.a
+rm -rf /usr/local/lib/python2.7
+# You might also have to do
+
+rm -f /usr/local/share/man/python2.7.1

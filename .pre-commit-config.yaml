@@ -1,0 +1,63 @@
+ci:
+    # skip: [pylint]
+    autofix_commit_msg: |
+        [pre-commit.ci] auto fixes from pre-commit.com hooks
+    autofix_prs: true
+    autoupdate_commit_msg: '[pre-commit.ci] pre-commit autoupdate'
+    autoupdate_schedule: weekly
+    skip: []
+    submodules: true    
+
+
+repos:
+  # files:
+- repo: git://github.com/pre-commit/pre-commit-hooks
+  rev: v4.0.1
+  hooks:
+    - id: check-yaml
+    - id: end-of-file-fixer
+    - id: trailing-whitespace
+    - id: check-case-conflict
+    - id: check-merge-conflict
+    - id: check-executables-have-shebangs
+    - id: trailing-whitespace  
+- repo: git://github.com/jumanjihouse/pre-commit-hooks
+  rev: v2.1.5
+  hooks:
+    - id: shfmt
+      args: ['-l', '-i', '2', '-ci', '-sr', '-w']
+- repo: git://github.com/antonbabenko/pre-commit-terraform
+  rev: v1.50.0 # Get the latest from: https://github.com/antonbabenko/pre-commit-terraform/releases
+  hooks:
+    - id: terraform_fmt
+    - id: terraform_docs      
+-   repo: local
+    hooks:
+    -   id: pre-merge-local
+        name: pre-merge
+        always_run: true
+        stages: [pre-merge-commit]                      
+-   repo: local
+    hooks:
+    -   id: post-merge-local
+        name: post-merge
+        always_run: true
+        stages: [post-merge]             
+-   repo: local
+    hooks:
+    -   id: post-commit-local
+        name: post commit
+        always_run: true
+        stages: [post-commit]  
+-   repo: local
+    hooks:
+    -   id: pre-push-local
+        name: pre-push
+        always_run: true
+        stages: [pre-push]        
+-   repo: local
+    hooks:
+    -   id: prepare-commit-msg
+        name: prepare-commit-msg
+        always_run: true
+        stages: [prepare-commit-msg]                  

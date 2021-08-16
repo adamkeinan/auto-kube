@@ -2,7 +2,8 @@ name: Check run
 on:
   push:
     branches:
-      - master
+      - origin
+      - development
 
 jobs:
   create-file:

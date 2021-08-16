@@ -2,8 +2,7 @@ name: backend
 on:
   push:
     branches:
-      - master
-      - releases/**
+      - origin
   pull_request:
 
 jobs:

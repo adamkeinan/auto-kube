@@ -3,7 +3,7 @@ name: openapi
 on:
   push:
     branches:
-      - master
+      - origin
 
 jobs:
   deref_json:
