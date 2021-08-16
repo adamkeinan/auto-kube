@@ -39,7 +39,7 @@ def main(argv=None):
         try:
             merge.list.append = ['terraform-docs']
             if args.sort:
-                procArgs.append('--sort-by-required')
+                merge.list.append('--sort-by-required')
             merge.list.append('md')
             merge.list.append("./{dir}".format(dir=dir))
             merge.list.append('>')
