@@ -37,8 +37,7 @@ def main(argv=None):
 
     for dir in dirs:
         try:
-            procArgs = []
-            procArgs.append('terraform-docs')
+            procArgs = ['terraform-docs']
             if args.sort:
                 procArgs.append('--sort-by-required')
             procArgs.append('md')
