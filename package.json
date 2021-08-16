@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "@apollo/rover": "^0.1.10"
+    "@apollo/rover": "0.1.10"
   },
   "dependencies": {
     "logrocket": "^2.0.0",
