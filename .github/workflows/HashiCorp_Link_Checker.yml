@@ -1,0 +1,45 @@
+name: "Hasicorp's Broken Links Checker"
+
+on:
+  push:
+    branches: [ origin ]
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches: [ terrraform ]
+  schedule:
+    - cron: '17 21 * * 1'
+
+jobs:
+  check-broken-link:
+    name: HashiCorp's Link Checker
+    runs-on: ubuntu-latest 
+    steps:
+      - uses: hashicorp/gh-action-check-broken-links@v1
+        with:
+          baseUrl: 'https://hashicorp.com'
+          files: 'pages/foo.mdx pages/bar.mdx'
+          whitelist: |
+            https://google.com/whitelist
+            https://yahoo.com/whitelist
+
+  ci:
+    name: Build / Test / Run
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - run: npm ci
+
+      - name: Build / Test
+        run: npm run all
+
+      - name: Run
+        id: action
+        continue-on-error: true
+        uses: ./
+        with:
+          baseUrl: "https://hashicorp.com"
+          files: "pages/test.mdx"
+
+      - run: |
+          echo ${{ toJson(steps.action.outputs.annotations) }}    

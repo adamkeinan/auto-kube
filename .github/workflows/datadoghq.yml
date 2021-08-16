@@ -1,0 +1,44 @@
+name: 'Datadog Action'
+
+on: 
+  push:
+      branches: [ origin ]
+    pull_request:
+      # The branches below must be a subset of the branches above
+      branches: [ development ]
+    schedule:
+      - cron: '35 7 * * 2'
+jobs:
+  build:
+    name: datadog-build
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: build
+        run: this-will-fail
+      - name: Datadog
+        if: failure()
+        uses: masci/datadog@v1
+        with:
+          api-key: ${{ secrets.DATADOG_API_KEY }}
+          events: |
+            - title: "Failed building Foo"
+              text: "Branch ${{ github.head_ref }} failed to build"
+              alert_type: "error"
+              host: ${{ github.repository_owner }}
+              tags:
+                - "project:${{ github.repository }}"
+    
+      - name: Build count
+        uses: masci/datadog@v1
+        with:
+          api-key: ${{ secrets.DATADOG_API_KEY }}
+          metrics: |
+            - type: "count"
+              name: "test.runs.count"
+              value: 1.0
+              host: ${{ github.repository_owner }}
+              tags:
+                - "project:${{ github.repository }}"
+                - "branch:${{ github.head_ref }}"

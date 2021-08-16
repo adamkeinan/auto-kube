@@ -1,0 +1,39 @@
+*.zip
+*.tfvars
+*.tfplan
+*.tfstate
+*.tfstate.backup
+bin/
+archive/*
+terraform.tfvars
+
+.github/workflows/secrets/**
+
+# NodeJS
+**/node_modules/**
+node_modules/**/**/*
+node_modules
+
+## Ruby
+vendor
+
+.ssh/**
+.ssh
+./ssh
+*.pem
+*.pub
+*.cert
+.aws
+.aws/**
+.history
+.vscode
+
+tfgitkp.*
+tfgitkp
+
+*.env
+
+.exe
+*.exe
+
+export PATH="$PATH:/mnt/c/Python39/python"

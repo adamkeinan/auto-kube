@@ -1,0 +1,20 @@
+name "Setup Jira"
+
+on:
+  push:
+    branches: [ origin ]
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches: [ development ]
+  schedule:
+    - cron: '17 21 * * 1'
+
+jobs: 
+  setup:
+    name: setup-jira
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Jira
+        uses: atlassian/gajira-cli@v2.0.2
+      - name: Make comment on Jira issue
+        run: jira --issue=GA-1 --comment=\"Actions in action\""
