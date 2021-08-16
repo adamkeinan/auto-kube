@@ -1,5 +1,0 @@
-# Automate-Kube
-
-[![DeepSource](https://deepsource.io/gh/adamkeinan/auto-kube.svg/?label=active+issues&show_trend=true)](https://deepsource.io/gh/adamkeinan/auto-kube/?ref=repository-badge) [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/adamkeinan/auto-kube/main.svg)](https://results.pre-commit.ci/latest/github/adamkeinan/auto-kube/main) [![DepShield Badge](https://depshield.sonatype.org/badges/owner/repository/depshield.svg)](https://depshield.github.io) [![DeepSource](https://deepsource.io/gh/adamkeinan/auto-kube.svg/?label=active+issues&show_trend=true&token=rNhEFjE7GSeJ8bp9Vhrd0ja8)](https://deepsource.io/gh/adamkeinan/auto-kube/?ref=repository-badge) [![DeepSource](https://deepsource.io/gh/adamkeinan/auto-kube.svg/?label=resolved+issues&show_trend=true&token=rNhEFjE7GSeJ8bp9Vhrd0ja8)](https://deepsource.io/gh/adamkeinan/auto-kube/?ref=repository-badge)
-
-#### An opinionated multi-purpuse Git repo that sets to exam multiple automation DevOps solotions in order to optimize aproduction-ready stack

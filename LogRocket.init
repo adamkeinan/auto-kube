@@ -1,9 +1,0 @@
-import createPlugin from 'logrocket-vuex';
-import LogRocket from 'logrocket';
-LogRocket.init('zthihj/auto-kube');
-
-const logrocketPlugin = createPlugin(LogRocket);
-const store = new Vuex.Store({
-  // ...
-  plugins: [logrocketPlugin]
-});
