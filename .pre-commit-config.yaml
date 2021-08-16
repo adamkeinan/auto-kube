@@ -22,7 +22,7 @@ repos:
     - id: check-executables-have-shebangs
     - id: trailing-whitespace  
 - repo: git://github.com/jumanjihouse/pre-commit-hooks
-  rev: v2.1.5
+  rev: 2.1.5
   hooks:
     - id: shfmt
       args: ['-l', '-i', '2', '-ci', '-sr', '-w']
