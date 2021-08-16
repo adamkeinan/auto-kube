@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - origin
-      - releases/**
   pull_request:
 
 jobs:
