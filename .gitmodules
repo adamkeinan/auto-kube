@@ -1,3 +1,0 @@
-[submodule "lab/terraform"]
-	path = lab/terraform
-	url = https://github.com/adamkeinan/auto-kube.git
