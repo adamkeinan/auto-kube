@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 - name: Super-Linter
-  uses: github/super-linter@v4.6.1
+  uses: github/super-linter@v4.6.2
   
   on:
   push:
