@@ -22,7 +22,7 @@ jobs:
     steps:
       - name: Check getsentry membership
         id: org
-        uses: actions/github-script@v3
+        uses: actions/github-script@v5
         with:
           script: |
             try {
@@ -44,7 +44,7 @@ jobs:
 
       - name: Dispatch getsentry tests
         if: steps.org.outputs.result == 'true'
-        uses: actions/github-script@v3
+        uses: actions/github-script@v5
         with:
           github-token: ${{ steps.getsentry.outputs.token }}
           script: |
