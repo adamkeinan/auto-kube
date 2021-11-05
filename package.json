@@ -3,7 +3,7 @@
     "@apollo/rover": "0.1.10"
   },
   "dependencies": {
-    "logrocket": "2.0.0",
+    "logrocket": "2.1.1",
     "logrocket-vuex": "0.0.3"
   }
 }
