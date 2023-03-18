@@ -65,7 +65,7 @@
     repo: repository-name  # Repository name
  
 - name: GH Release
-  uses: softprops/action-gh-release@v0.1.12
+  uses: softprops/action-gh-release@v0.1.15
 
   on: push
 
