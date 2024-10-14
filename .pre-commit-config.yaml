@@ -11,8 +11,8 @@ ci:
 
 repos:
   # files:
-- repo: git://github.com/pre-commit/pre-commit-hooks
-  rev: v4.0.1
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v5.0.0
   hooks:
     - id: check-yaml
     - id: end-of-file-fixer
@@ -21,13 +21,13 @@ repos:
     - id: check-merge-conflict
     - id: check-executables-have-shebangs
     - id: trailing-whitespace  
-- repo: git://github.com/jumanjihouse/pre-commit-hooks
-  rev: v2.1.5
+- repo: https://github.com/jumanjihouse/pre-commit-hooks
+  rev: 3.0.0
   hooks:
     - id: shfmt
       args: ['-l', '-i', '2', '-ci', '-sr', '-w']
-- repo: git://github.com/antonbabenko/pre-commit-terraform
-  rev: v1.50.0 # Get the latest from: https://github.com/antonbabenko/pre-commit-terraform/releases
+- repo: https://github.com/antonbabenko/pre-commit-terraform
+  rev: v1.96.1 # Get the latest from: https://github.com/antonbabenko/pre-commit-terraform/releases
   hooks:
     - id: terraform_fmt
     - id: terraform_docs      
